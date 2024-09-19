@@ -24,15 +24,12 @@ void base64_encode(unsigned char *input, int length, unsigned char *output) {
 
 void adjust_first_to_last(char *array) {
     int length = strlen(array);
-    if (length > 1) { // 确保数组长度大于1
-        char first_char = array[0]; // 记录第一位字符
-        
-        // 将第一位之后的字符向前移动
+    if (length > 1) {
+        char first_char = array[0];
         for (int i = 1; i < length; i++) {
             array[i - 1] = array[i];
         }
-        
-        array[length - 1] = first_char; // 将第一位字符放到最后
+        array[length - 1] = first_char;
     }
 }
 
@@ -43,17 +40,15 @@ void xor_encrypt_decrypt(unsigned char *input, unsigned char *output, char *key,
     }
     output[len] = '\0';
 }
+
 int main() {
 unsigned char buf[] = "your shellcode";
-
     unsigned char encoded[2048];
     unsigned char encrypted[2048];
     for(int i = 0; i<99999999; i++){
         adjust_first_to_last(key);
     }
     xor_encrypt_decrypt(buf, encrypted, key, sizeof(buf) / sizeof(buf[0]) - 1);
-    
     base64_encode(encrypted, sizeof(buf) / sizeof(buf[0]), encoded);
-    
     printf("shllcode密文: %s\n", encoded);
 }
