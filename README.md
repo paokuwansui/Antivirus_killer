@@ -18,4 +18,6 @@ set LPORT 443<br />
 run<br />
 ## 双击编译好的exe观察是否上线
 ![image](https://github.com/user-attachments/assets/d840c522-d096-4e4d-805e-3aca6461b1d7)
+![image](https://github.com/user-attachments/assets/2500bad4-e900-4e1e-8750-19680db5997f)
+
 
