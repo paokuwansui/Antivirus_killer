@@ -1,0 +1,1 @@
+nim c -d:danger -d:nimRawZlib --cpu:amd64 --app:console --panics:on --opt:size .\encrypt.nim

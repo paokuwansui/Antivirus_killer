@@ -1,0 +1,3 @@
+# 编译命令
+nim c -r -d:danger -d:nimRawZlib --cpu:amd64 --app:console --panics:on --opt:size .\encrypt.nim
+nim c -d:danger -d:nimRawZlib --cpu:amd64 --app:console --panics:on --opt:size .\main.nim
